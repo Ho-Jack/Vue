@@ -3,7 +3,7 @@
     <p>第一个数：{{ state.num1 }}</p>
     <p>第二个数：{{ state.num2 }}</p>
     <input v-model="state.num1" /> +   <input v-model="state.num2" /> ={{ state.result }}
-
+    <button @click="goParent">向父组件通讯</button>
   </div>
 </template>
 
@@ -14,14 +14,22 @@ export default {
   props: {
     msg: String
   },
-  setup() {
+  setup(props, { emit }) {
+    const goParent = () => {
+      console.log(state.num1);
+      
+      // eslint-disable-next-line vue/custom-event-name-casing
+      emit('fromChild', state.num1)
+    }
+
     const state = reactive({
       num1: 0,
       num2: 0,
       result: computed(() => parseInt(state.num1) + parseInt(state.num2))
     })
     return {
-      state
+      state,
+      goParent
     }
   },
   data() {

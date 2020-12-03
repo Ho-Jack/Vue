@@ -3,7 +3,7 @@
     <p>ref demo</p>
     <p>第一个数：{{ num1 }}</p>
     <p>第二个数：{{ num2 }}</p>
-    <input v-model="num1" /> + <input v-model="num2" /> ={{ result }}
+    <input v-model="num1" @change="add"> + <input v-model="num2" @change="add" /> ={{ result }}
   </div>
 </template>
 
@@ -18,11 +18,16 @@ export default {
     const num1 = ref(0)
     const num2 = ref(0)
     const result = ref(0)
-
+    const add = () => {
+      console.log(num1.value)
+      console.log(num2.value)
+      result.value = parseInt(num1.value) + parseInt(num2.value)
+    }
     return {
       num1,
       num2,
-      result
+      result,
+      add
     }
   },
   data() {

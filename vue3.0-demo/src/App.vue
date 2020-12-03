@@ -1,11 +1,13 @@
 <template>
-  <div id="nav">
-    <router-link to="/">reactive</router-link> |
-    <router-link to="/ref">ref</router-link>|
-    <router-link to="/about">About</router-link>
+  <div>
+    <div id="nav">
+      <router-link to="/">reactive</router-link> |
+      <router-link to="/ref">ref</router-link>|
+      <router-link to="/about">About</router-link>
 
+    </div>
+    <router-view></router-view>
   </div>
-  <router-view></router-view>
 </template>
 
 <style>

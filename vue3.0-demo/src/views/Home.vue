@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <reactive />
+    <reactive @fromChild="childMessage" />
   </div>
 </template>
 
@@ -12,6 +12,11 @@ export default {
   name: 'Home',
   components: {
     reactive
+  },
+  methods: {
+    childMessage(val) {
+      console.log(val)
+    }
   }
 }
 </script>
