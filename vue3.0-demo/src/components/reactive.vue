@@ -12,9 +12,12 @@ import { reactive, computed } from 'vue'
 export default {
   name: 'HelloWorld',
   props: {
-    msg: String
+    toChild: String
   },
   setup(props, { emit }) {
+
+    console.log(props);
+    
     const goParent = () => {
       console.log(state.num1);
       
@@ -36,6 +39,9 @@ export default {
     return {
 
     }
+  },
+  mounted(){
+  console.log(this.msg);
   }
 }
 </script>

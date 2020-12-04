@@ -1,17 +1,26 @@
 <template>
   <div class="home">
-    <reactive @fromChild="childMessage" />
+    <reactive1 @fromChild="childMessage" :toChild="state.msg"/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import reactive from '@/components/reactive.vue'
-
+import reactive1 from '@/components/reactive.vue'
+ import { reactive }  from 'vue'
 export default {
   name: 'Home',
   components: {
-    reactive
+    reactive1
+  },
+  setup() {
+     const  state=reactive({
+       msg:'父组件'
+     })
+     console.log(state.msg);
+     return {
+       state
+       }
   },
   methods: {
     childMessage(val) {
