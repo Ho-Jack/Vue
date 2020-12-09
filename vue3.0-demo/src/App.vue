@@ -5,34 +5,37 @@
       <router-link to="/ref">ref</router-link>|
       <router-link to="/about">About</router-link>
     </div> -->
-    <div class="main">    
-        <el-menu
-          :uniqueOpened="true"  
-          :router="true"
-          class="menu"    
-          background-color="#545c64"
-          text-color="#fff"
-          active-text-color="#ffd04b"
-        >
-          <el-menu-item index="/">
-            <template #title>
-              <i class="el-icon-location"></i>
-              <span>reactive</span>
-            </template>     
-          </el-menu-item>
-          <el-menu-item index="/ref">
-            <i class="el-icon-menu"></i>
-            <template #title>ref</template>
-          </el-menu-item>
-          <el-menu-item index="/render">
-            <i class="el-icon-document"></i>
-            <template #title>渲染函数 / JSX 中使用</template>
-          </el-menu-item>
-       
-        </el-menu>
-     
+    <div class="main">
+      <el-menu
+        :unique-opened="true"
+        :router="true"
+        class="menu"
+        background-color="#545c64"
+        text-color="#fff"
+        active-text-color="#ffd04b"
+      >
+        <el-menu-item index="/">
+          <template #title>
+            <i class="el-icon-location" />
+            <span>reactive</span>
+          </template>
+        </el-menu-item>
+        <el-menu-item index="/ref">
+          <i class="el-icon-menu" />
+          <template #title>ref</template>
+        </el-menu-item>
+        <el-menu-item index="/render">
+          <i class="el-icon-document" />
+          <template #title>渲染函数 / JSX 中使用</template>
+        </el-menu-item>
+        <el-menu-item index="/computed">
+          <i class="el-icon-document" />
+          <template #title>computed</template>
+        </el-menu-item>
+      </el-menu>
+
       <div class="content">
-        <router-view></router-view>
+        <router-view />
       </div>
     </div>
   </div>
@@ -65,7 +68,7 @@
   display: flex;
   flex-direction: row;
   .menu{
-    width: 150px;
+    width: 250px;
     height: 100vh;
   }
 }
