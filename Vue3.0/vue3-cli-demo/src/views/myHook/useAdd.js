@@ -1,16 +1,16 @@
 //加法功能-Hook
 import { ref, watch } from 'vue';
 const useAdd= ({ num1, num2 })  =>{
-    const addNum = ref(0)
+    const totalNum = ref(0)
     watch([num1, num2], ([num1, num2]) => {
-        add(num1, num2)
+        addFn(num1, num2)
     })
-    const add = (num1, num2) => {
-        addNum.value = num1 + num2
+    const addFn = (num1, num2) => {
+        totalNum.value = num1 + num2
     }
     return {
-        addNum,
-        add
+        totalNum,
+        addFn
     }
 }
 export default useAdd
